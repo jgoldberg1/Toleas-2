@@ -3,7 +3,8 @@ var startPho;
 
 
 
-function writeWord(){  document.getElementById('words').innerHTML = word;
+function writeWord(wordsId){
+    words = wordsId;
 }
 
 
@@ -107,34 +108,47 @@ function consoStart() {
     return startPho;
 }
 
-function assemble() {
-    var howLong = document.getElementById('wordLength').value;
-    var wordLength = howLong - 1;
-    if (startPho == 0) //startPho is a vowel
-        for (i = 0; i <= wordLength; i++) { //length
-            var syll = vowCon();
-            document.write(syll);
-            console.log(syll);
-        }
-    else if (startPho == 1) //startPho is a conso
-        for (i = 0; i <= wordLength; i++) {
-            var syll = conVow();
-            document.write(syll);
-            console.log(syll);
-        }
-    else {
-        document.write("Please select a starting phoneme for the word!");
-    }
-writeWord();
-}
+
+
+
+
+
+
 
 
 function createWordList() {
-    var numOfWords = document.getElementById('numOfWords').value;
+      var wordLength = document.getElementById('wordLength').value;
+        var wordLengthFinal = wordLength - 1;
+    var num = document.getElementById('numOfWords').value;
+    var numOfWords = num - 1;
+//parses how many words in the list
+    var i = 0;
+    while (i <= numOfWords) {
+        i++;
+//parses word length
 
-    for (i = 1; i <= numOfWords; i++) {
-        document.write(assemble());
-        writeWord();
+
+
+        //assembles individual words
+        if (startPho == 0) //startPho is a vowel
+            for (x = 0; x <= wordLengthFinal; x++) { //length
+                var syll = vowCon();
+                console.log(syll);
+                document.write(syll);
+            }
+            else if (startPho == 1) //startPho is a conso
+                for (x = 0; x <= wordLengthFinal; x++) {
+                    var syll = conVow();
+                        document.write(syll);
+                        console.log(syll);
+            }
+            else {
+                document.write("Please select a starting phoneme for the word!");
+            }
+    writeWord();
+        document.write("<br />")
     }
-
 }
+
+
+

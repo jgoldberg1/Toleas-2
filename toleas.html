@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+    <title>Toleas Word Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="javascript" type="text/javascript" src="toleas.js"></script>
   </head>
 <body>
-    <div id="words"></div>
+    <h1>Tol&euml;as Word Generator</h1>
+    <form>
+
 
     <p>Would you like to start the word with a vowel, or a consonant?</p>
-     <input type="button" value="Vowel" onclick="vowelStart()">
-    <input type="button" value="Consonant" onclick="consoStart()">
+    <p>
+        <button type="button" class="btn btn-info active" onclick="vowelStart()">Vowel</button>
+        <button type="button" class="btn btn-info active" onclick="consoStart()">Consonant</button>
+
+    </p>
     <br>
     <br>
 
@@ -22,10 +34,10 @@
     <br>
     <br>
 
-    <input type="button" value="Write word" onclick="createWordList()">
 
-
-
+    <button type="button" class="btn btn-info active" onclick="createWordList()">Write Word</button>
+    <input type="text" id="words">
+    </form>
 
 
   </body>
