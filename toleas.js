@@ -3,7 +3,7 @@ var startPho;
 
 
 
-function writeWord(){  document.getElementById('outputId').innerHTML = word;
+function writeWord(){  document.getElementById('words').innerHTML = word;
 }
 
 
@@ -16,17 +16,17 @@ var rankFiveC = ["dj", "snr", "krt", "krs", "kld", "klj", "blr", "wj", "zr", "x"
 var rankC;
 
 function pickRankC() {
-    var RandRankC = Math.floor((Math.random() * 16));
-    if (RandRankC == 1 || RandRankC == 2 || RandRankC == 3 || RandRankC == 4 || RandRankC == 5) {
+    var RandRankC = Math.floor((Math.random() * 177));
+    if (RandRankC >= 1 && RandRankC <= 60) {
         rankC = rankOneC;
     }
-    else if (RandRankC == 6 || RandRankC == 7 || RandRankC == 8 || RandRankC == 9) {
+    else if (RandRankC >= 61 && RandRankC <= 112) {
         rankC = rankTwoC;
     }
-    else if (RandRankC == 10 || RandRankC == 11 || RandRankC == 12) {
+    else if (RandRankC >= 113 && RandRankC <= 148) {
         rankC = rankThreeC;
     }
-    else if (RandRankC == 13 || RandRankC == 14) {
+    else if (RandRankC >= 149 && RandRankC <= 166) {
         rankC = rankFourC;
     }
     else {
@@ -52,11 +52,11 @@ var rankThreeV = ["&uuml", "&ouml", "ho", "&auml", "a", "hu"];
 var rankV;
 
 function pickRankV() {
-    var RandRankV = Math.ceil((Math.random() * 6));
-    if (RandRankV == 1 || RandRankV == 2 || RandRankV == 3) {
+    var RandRankV = Math.ceil((Math.random() * 28));
+    if (RandRankV >= 1 && RandRankV <= 12) {
         rankV = rankOneV;
     }
-    else if (RandRankV == 4 || RandRankV == 5) {
+    else if (RandRankV >= 13 && RandRankV <= 22) {
         rankV = rankTwoV;
     }
     else {
@@ -125,9 +125,16 @@ function assemble() {
     else {
         document.write("Please select a starting phoneme for the word!");
     }
-
-    writeWord();
+writeWord();
 }
 
 
+function createWordList() {
+    var numOfWords = document.getElementById('numOfWords').value;
 
+    for (i = 1; i <= numOfWords; i++) {
+        document.write(assemble());
+        writeWord();
+    }
+
+}

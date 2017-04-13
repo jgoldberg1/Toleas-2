@@ -4,19 +4,27 @@
     <script language="javascript" type="text/javascript" src="toleas.js"></script>
   </head>
 <body>
+    <div id="words"></div>
+
     <p>Would you like to start the word with a vowel, or a consonant?</p>
      <input type="button" value="Vowel" onclick="vowelStart()">
     <input type="button" value="Consonant" onclick="consoStart()">
     <br>
     <br>
+
     <p>How many syllables do you want the word to be? Please enter a digit, not a written word.</p>
    <input type="text" id="wordLength">
-
     <br>
     <br>
-    <input type="button" value="Write word" onclick="assemble()">
 
-    <div id="output"></div>
+    <p>How many words do you want to generate?</p>
+    <input type="text" id="numOfWords">
+    <br>
+    <br>
+
+    <input type="button" value="Write word" onclick="createWordList()">
+
+
 
 
 
